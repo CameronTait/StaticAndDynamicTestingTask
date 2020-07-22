@@ -13,7 +13,7 @@ class CardGame
     else
       return false
     end
-  end
+  end     
 
   dif highest_card(card1 card2) #should be def instead of dif and a comma is missing between cards.  should be self.highest_card also. indentation is not correct here.
   if card1.value > card2.value

@@ -1,14 +1,14 @@
 require("minitest/autorun")
-require('minitest/reporters')
+require("minitest/reporters")
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
-require_relative("../card_game")
-require_relative("../card")
+require_relative("../card_game.rb")
+require_relative("../card.rb")
 
 class CardGameTest < MiniTest::Test
 
   def setup
-    @card1 = Card.new("Ace", 3)
+    @card1 = Card.new("Ace", 1)
     @card2 = Card.new("Clubs", 2)
     @card3 = Card.new("Diamonds", 5)
 
@@ -26,11 +26,11 @@ class CardGameTest < MiniTest::Test
 
   #Will test which of the cards is higher
   def test_highest_card
-    assert_equal(@card1, CardGame.highest_card(@card1, @card2))
+    assert_equal(@card2, CardGame.highest_card(@card1, @card2))
   end
 
   #Tests for the sum of the card numbers
   def test_cards_total
-    (assert_equal("You have a total of 5", CardGame.cards_total(@cards)))
+    assert_equal("You have a total of 3", CardGame.cards_total(@cards))
   end
 end
